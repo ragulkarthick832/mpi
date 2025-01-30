@@ -1,0 +1,52 @@
+## MPI Basics
+
+MPI_INIT	: Initiate an MPI computation 
+MPI_FINALIZE	: Terminate a computation
+MPI_COMM_SIZE	: Determine number of processes
+MPI_COMM_RANK	: Determine my process indentifier
+MPI_SEND	: Send a message
+MPI_RECV	: Receive a message
+
+
+IN -> function uses but doesn't modify the parameter
+OUT -> does not use but may update the parameter
+INOUT -> uses and updates
+
+MPI_INIT(int *argc, char ***argv)
+Initiate a computation
+ argc, argv are required only in the C language binding, where they are the main program's arguements
+
+
+
+MPI_COMM_SIZE(comm,size)
+IN      comm	communicator (handle)
+OUT	size	number of precess in the group of comm (integer)
+
+
+MPI_COMM_RANK(comm,pid)
+IN	comm	communicator (handle)
+OUT	pid	process id in the group of comm (integer)
+
+
+MPI_SEND(buf, count, datatype, dest, tag, comm)
+IN	buf		addres of send buffer (choice)
+IN	count		number of elements to send 
+IN	datatype        dataype of receive buffer elemnts
+IN	dest		process id of destination process
+IN	tag		message tag
+IN	comm		communicator
+
+
+MPI_RECV(buf, count, datatype, src, tag, comm, status)
+OUT	buf
+IN	count
+IN	datatype
+IN	src
+IN	tag
+IN	comm
+OUT	status	status object (status)
+
+ 
+
+
+
