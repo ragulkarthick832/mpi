@@ -46,6 +46,19 @@ IN	tag
 IN	comm
 OUT	status	status object (status)
 
+
+### Paramters
+Function parametes with type IN are passed by value, while parameters with type OUT and INOUT are passed y reference
+
+status variable - MPI_Status => actually contains status.MPI_SOURCE and status.MPI_TAG
+
+
+### MPI DATATYPES
+MPI_CHAR, MPI_INIT, MPI_LONG, MPI_UNSIGNED_CHAR, MPI_UNSIGNED, MPI_UNSIGNED_LONG, MPI_FLOAT,
+MPI_DOUBLE, MPI_LONG_DOUBLE
+
+
+
  
 
 
