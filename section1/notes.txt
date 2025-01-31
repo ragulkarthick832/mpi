@@ -57,7 +57,14 @@ status variable - MPI_Status => actually contains status.MPI_SOURCE and status.M
 MPI_CHAR, MPI_INIT, MPI_LONG, MPI_UNSIGNED_CHAR, MPI_UNSIGNED, MPI_UNSIGNED_LONG, MPI_FLOAT,
 MPI_DOUBLE, MPI_LONG_DOUBLE
 
-
+### MPI_Status
+Struct MPI_Struct{
+	int MPI_SOURCE;
+	int MPI_TAG;
+	int MPI_ERROR;
+	int _cancelled;
+	size_t _ucount;
+};
 
  
 

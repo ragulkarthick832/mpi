@@ -15,15 +15,15 @@ int main(int argc,char **argv)
 		// 1. Send the value to process 1
 		// 2. Receive the value from process 1 (in other_value)
 		// 3. Print the sum of the two values on stdout
-		MPI_Send(&local_value,1,MPI_INT,1,0,MPI_COMM_WORLD);
 		MPI_Recv(&other_value,1,MPI_INT,1,0,MPI_COMM_WORLD,MPI_STATUS_IGNORE);
+		MPI_Send(&local_value,1,MPI_INT,1,0,MPI_COMM_WORLD);
 		printf("Process 0: Sum of values = %d\n",(local_value+other_value));
 	} else if (rank == 1){
 		 // 1. Receive the value from process 0 (in other_value)
         	 // 2. Send the value to process 0
         	 // 3. Print the product of the two values on stdout
-        	 MPI_Recv(&other_value,1,MPI_INT,0,0,MPI_COMM_WORLD,MPI_STATUS_IGNORE);
         	 MPI_Send(&local_value,1,MPI_INT,0,0,MPI_COMM_WORLD);
+        	 MPI_Recv(&other_value,1,MPI_INT,0,0,MPI_COMM_WORLD,MPI_STATUS_IGNORE);
         	 printf("Process 1: Sum of values = %d\n",(local_value+other_value));
         }
         MPI_Finalize();
